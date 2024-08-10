@@ -6,10 +6,10 @@ import (
 	"io"
 	"time"
 
-	"github.com/ledisdb/ledisdb/rpl"
-	"github.com/ledisdb/ledisdb/store"
-	"github.com/siddontang/go/log"
-	"github.com/siddontang/go/snappy"
+	"github.com/opentoys/ledisdb/pkg/go/log"
+	"github.com/opentoys/ledisdb/pkg/go/snappy"
+	"github.com/opentoys/ledisdb/rpl"
+	"github.com/opentoys/ledisdb/store"
 )
 
 const (

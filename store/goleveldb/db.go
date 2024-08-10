@@ -1,17 +1,16 @@
 package goleveldb
 
 import (
-	"github.com/syndtr/goleveldb/leveldb"
-	"github.com/syndtr/goleveldb/leveldb/cache"
-	"github.com/syndtr/goleveldb/leveldb/filter"
-	"github.com/syndtr/goleveldb/leveldb/opt"
-	"github.com/syndtr/goleveldb/leveldb/storage"
-	"github.com/syndtr/goleveldb/leveldb/util"
-
-	"github.com/ledisdb/ledisdb/config"
-	"github.com/ledisdb/ledisdb/store/driver"
-
 	"os"
+
+	"github.com/opentoys/ledisdb/config"
+	"github.com/opentoys/ledisdb/pkg/leveldb"
+	"github.com/opentoys/ledisdb/pkg/leveldb/cache"
+	"github.com/opentoys/ledisdb/pkg/leveldb/filter"
+	"github.com/opentoys/ledisdb/pkg/leveldb/opt"
+	"github.com/opentoys/ledisdb/pkg/leveldb/storage"
+	"github.com/opentoys/ledisdb/pkg/leveldb/util"
+	"github.com/opentoys/ledisdb/store/driver"
 )
 
 const defaultFilterBits int = 10

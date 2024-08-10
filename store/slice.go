@@ -1,7 +1,7 @@
 package store
 
 import (
-	"github.com/ledisdb/ledisdb/store/driver"
+	"github.com/opentoys/ledisdb/store/driver"
 )
 
 type Slice interface {

@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ledisdb/ledisdb/store"
-	"github.com/siddontang/go/num"
+	"github.com/opentoys/ledisdb/pkg/go/num"
+	"github.com/opentoys/ledisdb/store"
 )
 
 // KVPair is the pair of key-value.
@@ -95,8 +95,9 @@ func (db *DB) incr(key []byte, delta int64) (int64, error) {
 	return n, err
 }
 
-//	ps : here just focus on deleting the key-value data,
-//		 any other likes expire is ignore.
+// ps : here just focus on deleting the key-value data,
+//
+//	any other likes expire is ignore.
 func (db *DB) delete(t *batch, key []byte) int64 {
 	key = db.encodeKVKey(key)
 	t.Delete(key)

@@ -1,7 +1,7 @@
 package store
 
 import (
-	"github.com/siddontang/go/sync2"
+	"github.com/opentoys/ledisdb/pkg/go/sync2"
 )
 
 type Stat struct {

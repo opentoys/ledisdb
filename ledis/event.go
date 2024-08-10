@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/siddontang/go/hack"
+	"github.com/opentoys/ledisdb/pkg/go/hack"
 )
 
 var errInvalidEvent = errors.New("invalid event")

@@ -1,7 +1,7 @@
 package goleveldb
 
 import (
-	"github.com/syndtr/goleveldb/leveldb/iterator"
+	"github.com/opentoys/ledisdb/pkg/leveldb/iterator"
 )
 
 type Iterator struct {

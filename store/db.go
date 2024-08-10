@@ -4,8 +4,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ledisdb/ledisdb/config"
-	"github.com/ledisdb/ledisdb/store/driver"
+	"github.com/opentoys/ledisdb/config"
+	"github.com/opentoys/ledisdb/store/driver"
 )
 
 type DB struct {
@@ -106,16 +106,16 @@ func (db *DB) RevRangeIterator(min []byte, max []byte, rangeType uint8) *RangeLi
 	return NewRevRangeLimitIterator(db.NewIterator(), &Range{min, max, rangeType}, &Limit{0, -1})
 }
 
-//RangeLimitIterator count < 0, unlimit.
+// RangeLimitIterator count < 0, unlimit.
 //
-//offset must >= 0, if < 0, will get nothing.
+// offset must >= 0, if < 0, will get nothing.
 func (db *DB) RangeLimitIterator(min []byte, max []byte, rangeType uint8, offset int, count int) *RangeLimitIterator {
 	return NewRangeLimitIterator(db.NewIterator(), &Range{min, max, rangeType}, &Limit{offset, count})
 }
 
-//RevRangeLimitIterator count < 0, unlimit.
+// RevRangeLimitIterator count < 0, unlimit.
 //
-//offset must >= 0, if < 0, will get nothing.
+// offset must >= 0, if < 0, will get nothing.
 func (db *DB) RevRangeLimitIterator(min []byte, max []byte, rangeType uint8, offset int, count int) *RangeLimitIterator {
 	return NewRevRangeLimitIterator(db.NewIterator(), &Range{min, max, rangeType}, &Limit{offset, count})
 }

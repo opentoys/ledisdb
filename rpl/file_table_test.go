@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/siddontang/go/log"
+	"github.com/opentoys/ledisdb/pkg/go/log"
 )
 
 func TestFileTable(t *testing.T) {

@@ -8,11 +8,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ledisdb/ledisdb/config"
-	"github.com/ledisdb/ledisdb/rpl"
-	"github.com/ledisdb/ledisdb/store"
-	"github.com/siddontang/go/filelock"
-	"github.com/siddontang/go/log"
+	"github.com/opentoys/ledisdb/config"
+	"github.com/opentoys/ledisdb/pkg/go/filelock"
+	"github.com/opentoys/ledisdb/pkg/go/log"
+	"github.com/opentoys/ledisdb/rpl"
+	"github.com/opentoys/ledisdb/store"
 )
 
 // Ledis is the core structure to handle the database.

@@ -7,9 +7,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ledisdb/ledisdb/config"
-	"github.com/ledisdb/ledisdb/store"
-	"github.com/siddontang/go/num"
+	"github.com/opentoys/ledisdb/config"
+	"github.com/opentoys/ledisdb/pkg/go/num"
+	"github.com/opentoys/ledisdb/store"
 )
 
 type GoLevelDBStore struct {

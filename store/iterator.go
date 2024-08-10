@@ -3,7 +3,7 @@ package store
 import (
 	"bytes"
 
-	"github.com/ledisdb/ledisdb/store/driver"
+	"github.com/opentoys/ledisdb/store/driver"
 )
 
 const (
@@ -22,11 +22,10 @@ const (
 //
 // range type:
 //
-//  close: [min, max]
-//  open: (min, max)
-//  lopen: (min, max]
-//  ropen: [min, max)
-//
+//	close: [min, max]
+//	open: (min, max)
+//	lopen: (min, max]
+//	ropen: [min, max)
 type Range struct {
 	Min []byte
 	Max []byte

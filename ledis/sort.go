@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strconv"
 
-	"github.com/ledisdb/ledisdb/store"
+	"github.com/opentoys/ledisdb/store"
 )
 
 // Limit is for sort.

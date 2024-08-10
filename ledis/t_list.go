@@ -7,11 +7,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ledisdb/ledisdb/store"
-	"github.com/siddontang/go/hack"
-	"github.com/siddontang/go/log"
-	"github.com/siddontang/go/num"
-	"golang.org/x/net/context"
+	"context"
+
+	"github.com/opentoys/ledisdb/pkg/go/hack"
+	"github.com/opentoys/ledisdb/pkg/go/log"
+	"github.com/opentoys/ledisdb/pkg/go/num"
+	"github.com/opentoys/ledisdb/store"
 )
 
 const (
@@ -326,8 +327,9 @@ func (db *DB) ltrim(key []byte, trimSize, whereSeq int32) (int32, error) {
 	return trimEndSeq - trimStartSeq + 1, err
 }
 
-//	ps : here just focus on deleting the list data,
-//		 any other likes expire is ignore.
+// ps : here just focus on deleting the list data,
+//
+//	any other likes expire is ignore.
 func (db *DB) lDelete(t *batch, key []byte) int64 {
 	mk := db.lEncodeMetaKey(key)
 

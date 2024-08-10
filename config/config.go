@@ -1,16 +1,12 @@
 package config
 
 import (
-	"bytes"
 	"errors"
-	"io"
+	"fmt"
 	"io/ioutil"
 	"sync"
 
-	"fmt"
-
-	"github.com/pelletier/go-toml"
-	"github.com/siddontang/go/ioutil2"
+	"github.com/opentoys/ledisdb/pkg/toml"
 )
 
 var (
@@ -271,36 +267,6 @@ func (cfg *RocksDBConfig) adjust() {
 	cfg.BackgroundThreads = getDefault(2, cfg.BackgroundThreads)
 	cfg.HighPriorityBackgroundThreads = getDefault(1, cfg.HighPriorityBackgroundThreads)
 	cfg.MaxManifestFileSize = getDefault(20*MB, cfg.MaxManifestFileSize)
-}
-
-func (cfg *Config) Dump(w io.Writer) error {
-	data, err := toml.Marshal(*cfg)
-	if err != nil {
-		return err
-	}
-	if _, err := w.Write(data); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (cfg *Config) DumpFile(fileName string) error {
-	var b bytes.Buffer
-
-	if err := cfg.Dump(&b); err != nil {
-		return err
-	}
-
-	return ioutil2.WriteFileAtomic(fileName, b.Bytes(), 0644)
-}
-
-func (cfg *Config) Rewrite() error {
-	if len(cfg.FileName) == 0 {
-		return ErrNoConfigFile
-	}
-
-	return cfg.DumpFile(cfg.FileName)
 }
 
 func (cfg *Config) GetReadonly() bool {

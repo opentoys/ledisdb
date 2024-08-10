@@ -10,8 +10,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/siddontang/go/log"
-	"github.com/siddontang/go/sync2"
+	"github.com/opentoys/ledisdb/pkg/go/log"
+	"github.com/opentoys/ledisdb/pkg/go/sync2"
 )
 
 var (

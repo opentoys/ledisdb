@@ -7,8 +7,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ledisdb/ledisdb/config"
-	"github.com/ledisdb/ledisdb/store/driver"
+	"github.com/opentoys/ledisdb/config"
+	"github.com/opentoys/ledisdb/store/driver"
 )
 
 func TestStore(t *testing.T) {

@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ledisdb/ledisdb/store"
+	"github.com/opentoys/ledisdb/store"
 )
 
 const (
@@ -68,7 +68,7 @@ func TestDBZSet(t *testing.T) {
 		t.Fatal(n)
 	}
 
-	if n, err := db.ZCount(key, 0, 0XFF); err != nil {
+	if n, err := db.ZCount(key, 0, 0xFF); err != nil {
 		t.Fatal(err)
 	} else if n != 4 {
 		t.Fatal(n)
@@ -110,7 +110,7 @@ func TestDBZSet(t *testing.T) {
 		t.Fatal(n)
 	}
 
-	if n, err := db.ZCount(key, 0, 0XFF); err != nil {
+	if n, err := db.ZCount(key, 0, 0xFF); err != nil {
 		t.Fatal(err)
 	} else if n != 0 {
 		t.Fatal(n)
@@ -130,7 +130,7 @@ func TestZSetOrder(t *testing.T) {
 		db.ZAdd(key, pair(membs[i], i))
 	}
 
-	if n, _ := db.ZCount(key, 0, 0XFFFF); int(n) != membCnt {
+	if n, _ := db.ZCount(key, 0, 0xFFFF); int(n) != membCnt {
 		t.Fatal(n)
 	}
 
@@ -183,7 +183,7 @@ func TestZSetOrder(t *testing.T) {
 		t.Fatal(pos)
 	}
 
-	if qMembs, err := db.ZRangeByScore(key, 999, 0XFFFF, 0, membCnt); err != nil {
+	if qMembs, err := db.ZRangeByScore(key, 999, 0xFFFF, 0, membCnt); err != nil {
 		t.Fatal(err)
 	} else if len(qMembs) != 1 {
 		t.Fatal(len(qMembs))
@@ -294,7 +294,7 @@ func TestZUnionStore(t *testing.T) {
 		t.Fatal("invalid value ", v)
 	}
 
-	n, err = db.ZCount(out, 0, 0XFFFE)
+	n, err = db.ZCount(out, 0, 0xFFFE)
 
 	if err != nil {
 		t.Fatal(err.Error())
@@ -363,7 +363,7 @@ func TestZInterStore(t *testing.T) {
 		t.Fatal("invalid value ", v)
 	}
 
-	n, err = db.ZCount(out, 0, 0XFFFF)
+	n, err = db.ZCount(out, 0, 0xFFFF)
 	if err != nil {
 		t.Fatal(err.Error())
 	}

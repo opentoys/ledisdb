@@ -1,7 +1,7 @@
 package goleveldb
 
 import (
-	"github.com/syndtr/goleveldb/leveldb"
+	"github.com/opentoys/ledisdb/pkg/leveldb"
 )
 
 type WriteBatch struct {

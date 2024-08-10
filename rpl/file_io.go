@@ -5,8 +5,8 @@ import (
 	"io"
 	"os"
 
-	"github.com/edsrzf/mmap-go"
-	"github.com/siddontang/go/log"
+	"github.com/opentoys/ledisdb/pkg/go/log"
+	"github.com/opentoys/ledisdb/pkg/mmap"
 )
 
 //like leveldb or rocksdb file interface, haha!

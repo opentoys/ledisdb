@@ -4,13 +4,13 @@ import (
 	"errors"
 	"regexp"
 
-	"github.com/ledisdb/ledisdb/store"
+	"github.com/opentoys/ledisdb/store"
 )
 
 var errDataType = errors.New("error data type")
 var errMetaKey = errors.New("error meta key")
 
-//Scan scans the data. If inclusive is true, scan range [cursor, inf) else (cursor, inf)
+// Scan scans the data. If inclusive is true, scan range [cursor, inf) else (cursor, inf)
 func (db *DB) Scan(dataType DataType, cursor []byte, count int, inclusive bool, match string) ([][]byte, error) {
 	storeDataType, err := getDataStoreType(dataType)
 	if err != nil {

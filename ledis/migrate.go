@@ -3,7 +3,7 @@ package ledis
 import (
 	"fmt"
 
-	"github.com/siddontang/rdb"
+	"github.com/opentoys/ledisdb/pkg/rdb"
 )
 
 /*

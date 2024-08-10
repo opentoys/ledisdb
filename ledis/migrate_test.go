@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ledisdb/ledisdb/config"
+	"github.com/opentoys/ledisdb/config"
 )
 
 func TestMigrate(t *testing.T) {

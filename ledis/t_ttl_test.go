@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/siddontang/go/hack"
+	"github.com/opentoys/ledisdb/pkg/go/hack"
 )
 
 var m sync.Mutex

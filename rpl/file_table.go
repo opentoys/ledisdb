@@ -206,6 +206,9 @@ func (t *tableReader) repair() error {
 
 	//repair will use raw file mode
 	data, err = newWriteFile(false, fmtTableDataName(t.base, t.index), 0)
+	if err != nil {
+		return err
+	}
 	data.SetOffset(int64(data.Size()))
 
 	meta, err = newWriteFile(false, fmtTableMetaName(t.base, t.index), int64(defaultLogNumInFile*4))
